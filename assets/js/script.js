@@ -396,12 +396,12 @@ function musicPlay(stat) {
   }, 100);
 }
 
-// audio.addEventListener("ended", () => {
-//   clearInterval(interval);
-//   play.dataset.playing = 0;
-//   play.src = "assets/image/controller/play.png";
-//   musicPlay(false);
-// });
+audio.addEventListener("ended", () => {
+  clearInterval(interval);
+  play.dataset.playing = 0;
+  play.src = "assets/image/controller/play.png";
+  musicPlay(false);
+});
 const bioArrow = document.querySelector(".arrow");
 const bio = document.querySelector(".biodata");
 bioArrow.addEventListener("click", () => {
