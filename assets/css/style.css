@@ -63,7 +63,7 @@ nav ul li a.active {
   height: 560px;
   /* border: 1px solid magenta; */
   margin: auto;
-  background-image: url("assets/image/background.webp");
+  background-image: url("../image/background.webp");
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
