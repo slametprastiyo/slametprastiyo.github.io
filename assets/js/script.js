@@ -408,10 +408,10 @@ bioArrow.addEventListener("click", () => {
   if (bioArrow.dataset.stat == "down") {
     bio.classList.add("show");
     bioArrow.dataset.stat = "up";
-    bioArrow.innerHTML = "&#11165;";
+    bioArrow.src = "assets/image/icons/arrow up.png";
   } else {
     bio.classList.remove("show");
     bioArrow.dataset.stat = "down";
-    bioArrow.innerHTML = "&#11167;";
+    bioArrow.src = "assets/image/icons/arrow down.png";
   }
 });

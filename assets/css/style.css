@@ -542,7 +542,8 @@ aside .card .biodata {
 aside .card .biodata.show {
   height: max-content;
 }
-.card p.arrow {
+.card img.arrow {
+  width: 25px;
   display: inline-block;
   cursor: pointer;
 }
