@@ -342,6 +342,7 @@ play.addEventListener("click", () => {
     play.src = "assets/image/controller/pause.png";
     musicPlay(true);
     audio.play();
+    musicPlayerLoader.remove();
   } else {
     play.dataset.playing = 0;
     play.src = "assets/image/controller/play.png";
@@ -394,7 +395,6 @@ function musicPlay(stat) {
       ", " +
       random +
       ")";
-    musicPlayerLoader.remove();
   }, 100);
 }
 
