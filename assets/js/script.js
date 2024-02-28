@@ -327,16 +327,14 @@ const stop = document.querySelector("img.stop");
 const audio = document.querySelector("audio");
 audio.src = "assets/audio/Hold On Tight.mp3";
 const musicPlayer = document.querySelector(".music-player");
-const musicPlayerLoader = document.querySelector(".music-player .loader");
 play.addEventListener("click", () => {
+  const musicPlayerLoader = document.querySelector(".music-player .loader");
   const audio = document.querySelector(".music-player audio");
 
   if (musicPlayerLoader != null) {
     musicPlayerLoader.classList.add("show");
   }
-  audio.addEventListener("loadeddata", () => {
-    musicPlayerLoader.remove();
-  });
+
   if (play.dataset.playing == false) {
     play.dataset.playing = 1;
     play.src = "assets/image/controller/pause.png";
