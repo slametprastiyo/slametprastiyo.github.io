@@ -325,11 +325,11 @@ sectionBio.style.minHeight = sectionBio.clientWidth + "px";
 const play = document.querySelector("img.play");
 const stop = document.querySelector("img.stop");
 const audio = document.querySelector("audio");
+audio.src = "assets/audio/Hold On Tight.mp3";
 const musicPlayer = document.querySelector(".music-player");
 const musicPlayerLoader = document.querySelector(".music-player .loader");
 play.addEventListener("click", () => {
   const audio = document.querySelector(".music-player audio");
-  audio.src = "assets/audio/Hold On Tight.mp3";
 
   if (musicPlayerLoader != null) {
     musicPlayerLoader.classList.add("show");
