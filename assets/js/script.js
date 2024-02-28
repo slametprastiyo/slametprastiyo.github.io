@@ -327,25 +327,25 @@ const stop = document.querySelector("img.stop");
 const audio = document.querySelector("audio");
 audio.src = "assets/audio/Hold On Tight.mp3";
 const musicPlayer = document.querySelector(".music-player");
+const musicPlayerLoader = document.querySelector(".music-player .loader");
+
 play.addEventListener("click", () => {
-  const musicPlayerLoader = document.querySelector(".music-player .loader");
-  const audio = document.querySelector(".music-player audio");
-
-  if (musicPlayerLoader != null) {
-    musicPlayerLoader.classList.add("show");
-  }
-
   if (play.dataset.playing == false) {
+    if (musicPlayerLoader != null) {
+      musicPlayerLoader.classList.add("show");
+    }
     play.dataset.playing = 1;
     play.src = "assets/image/controller/pause.png";
-    musicPlay(true);
     audio.play();
-    musicPlayerLoader.remove();
+    musicPlay(true);
+    audio.addEventListener("loadeddata", () => {
+      musicPlayerLoader.remove();
+    });
   } else {
     play.dataset.playing = 0;
     play.src = "assets/image/controller/play.png";
-    musicPlay(false);
     audio.pause();
+    musicPlay(false);
   }
 });
 stop.addEventListener("click", () => {
@@ -359,7 +359,6 @@ stop.addEventListener("click", () => {
 let interval;
 let random = 0;
 function musicPlay(stat) {
-  console.log(stat);
   if (stat == false) {
     clearInterval(interval);
     musicPlayer.style.boxShadow = "0 0 0 rgba(255, 255, 255, 1)";
@@ -393,15 +392,16 @@ function musicPlay(stat) {
       ", " +
       random +
       ")";
+    musicPlayerLoader.remove();
   }, 100);
 }
 
-audio.addEventListener("ended", () => {
-  clearInterval(interval);
-  play.dataset.playing = 0;
-  play.src = "assets/image/controller/play.png";
-  musicPlay(false);
-});
+// audio.addEventListener("ended", () => {
+//   clearInterval(interval);
+//   play.dataset.playing = 0;
+//   play.src = "assets/image/controller/play.png";
+//   musicPlay(false);
+// });
 const bioArrow = document.querySelector(".arrow");
 const bio = document.querySelector(".biodata");
 bioArrow.addEventListener("click", () => {
