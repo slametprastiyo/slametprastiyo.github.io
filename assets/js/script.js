@@ -394,7 +394,7 @@ function musicPlay(stat) {
       ", " +
       random +
       ")";
-    musicPlayerLoader.classList.remove("show");
+    musicPlayerLoader.remove();
   }, 100);
 }
 
