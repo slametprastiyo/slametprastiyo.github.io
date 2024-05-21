@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BukuKu</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.png" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="help">?</div>
+
+        <div class="logo"><p>BukuKu</p></div>
+        <div class="search">
+          <input type="text" id="search-bar" placeholder="cari judul buku" />
+          <form action="" class="delete-book">
+            <p>Hapus?</p>
+            <input type="hidden" id="book-id" />
+            <p class="title-delete">The chronicles of Narnia</p>
+            <div class="form-menu">
+              <button type="submit" id="delete">Oke</button>
+              <button class="cancel">Batal</button>
+            </div>
+          </form>
+          <form action="" class="add-new-book">
+            <p>Tambahkan buku baru</p>
+            <div class="wrapper">
+              <label for="title">Judul</label>
+              <input
+                type="text"
+                name="title"
+                placeholder="Judul"
+                required="required"
+                id="new-title"
+              />
+            </div>
+            <div class="wrapper">
+              <label for="author">Penulis</label>
+              <input
+                type="text"
+                name="author"
+                placeholder="Penulis"
+                required="required"
+                id="new-author"
+              />
+            </div>
+            <div class="wrapper">
+              <label for="year">Tahun</label>
+              <input
+                type="number"
+                name="year"
+                placeholder="Tahun terbit"
+                required="required"
+                id="new-year"
+                min="1000"
+                max="2024"
+              />
+            </div>
+            <div class="wrapper radio">
+              <input type="checkbox" id="isComplete" name="isCompleted" />
+              <label for="isCompleted">selesai dibaca</label>
+            </div>
+            <div class="form-menu">
+              <button type="submit" class="submit">Simpan</button>
+              <button class="cancel">Batal</button>
+            </div>
+          </form>
+          <form action="" class="edit-book">
+            <p>Edit</p>
+            <div class="wrapper">
+              <label for="title">Judul</label>
+              <input
+                type="text"
+                name="title"
+                placeholder="Judul"
+                required="required"
+                id="edit-title"
+              />
+            </div>
+            <div class="wrapper">
+              <label for="author">Penulis</label>
+              <input
+                type="text"
+                name="author"
+                placeholder="Penulis"
+                required="required"
+                id="edit-author"
+              />
+            </div>
+            <div class="wrapper">
+              <label for="year">Tahun</label>
+              <input
+                type="number"
+                name="year"
+                placeholder="Tahun terbit"
+                required="required"
+                id="edit-year"
+                min="1000"
+                max="2024"
+              />
+            </div>
+            <div class="wrapper radio">
+              <input type="checkbox" id="edit-is-complete" name="isCompleted" />
+              <label for="isCompleted">selesai dibaca</label>
+            </div>
+            <div class="form-menu">
+              <button type="submit" class="submit">Simpan</button>
+              <button class="cancel">Batal</button>
+            </div>
+            <input type="hidden" id="edit-book-id" />
+          </form>
+          <div class="help-container">
+            <ul>
+              <li>Tekan + untuk menambah buku</li>
+              <li>Hover di area buku untuk menampilkan menu</li>
+            </ul>
+          </div>
+        </div>
+        <div class="add">
+          <div class="add-btn">+</div>
+        </div>
+      </header>
+      <main>
+        <div class="menu">
+          <div class="menu-btn completed active">Sudah dibaca</div>
+          <div class="menu-btn uncompleted">Belum dibaca</div>
+        </div>
+
+        <div class="outer-book-container">
+          <div class="inner-book-container completed show"></div>
+          <div class="inner-book-container uncompleted"></div>
+        </div>
+      </main>
+      <footer></footer>
+    </div>
+    <audio src="assets/audio/bubble.mp3" id="bubble"></audio>
+    <script src="assets/js/index.js"></script>
+  </body>
+</html>
