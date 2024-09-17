@@ -18,6 +18,10 @@ body{
     padding: 5px;
     border-radius:15px;
     margin-bottom:5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     
 }
 .lang{
@@ -25,6 +29,7 @@ body{
     font-size:.75rem;
     text-transform:capitalize;
     padding: 0 10px;
+    width: 100%;
 }
 
 .lang.en{
@@ -81,4 +86,16 @@ form *{
 form button{
     margin: 10px 0;
     border:none;
+}
+.delete{
+    font-size: .7rem;
+    background: red;
+    width: max-content;
+    padding: 2.5px;
+    border-radius: 5px;
+    display: none;
+
+}
+.delete.show{
+    display: block;
 }

@@ -8,6 +8,7 @@ const addNew = document.querySelector("#add-new");
   getSavedWords();
   function getSavedWords(){
     w = localStorage.getItem("words");
+    // console.log(w);
     if(w != null){
       words = JSON.parse(w);
     }
@@ -31,7 +32,6 @@ const addNew = document.querySelector("#add-new");
   langEn.classList.add("lang");
   langEn.classList.add("en");
   langEn.innerHTML = w[0];
-
   const langId = document.createElement("div");
   langId.classList.add("lang");
   langId.classList.add("id");
@@ -39,6 +39,13 @@ const addNew = document.querySelector("#add-new");
 
   wordEl.appendChild(langEn);
   wordEl.appendChild(langId);
+  const deleteBtn = document.createElement("div");
+  deleteBtn.innerHTML = "Delete";
+  deleteBtn.classList.add("delete");
+  deleteBtn.addEventListener("click",()=>{
+    deleteWord(w);
+  })
+  wordEl.appendChild(deleteBtn);
 container.appendChild(wordEl);
   })
 
@@ -50,7 +57,9 @@ container.appendChild(wordEl);
     const en = word.querySelector(".en");
     const id = word.querySelector(".id");
     en.addEventListener("click",()=>{
+      const deleteBtn = word.querySelector(".delete");
       id.classList.toggle("show");
+      deleteBtn.classList.toggle("show");
       // testArea.innerHTML += "ok";
     })
 })
@@ -97,3 +106,17 @@ addNew.addEventListener("click",()=>{
 // testArea.innerHTML = addNew;
 form.classList.toggle("show");
 })
+
+
+
+
+function deleteWord(w) {
+  let index = JSON.stringify(w);
+  index = w[0] +","+w[1];
+  index = words.indexOf(index);
+  words.splice(index,1);
+  
+  console.log(words);
+  localStorage.setItem("words", JSON.stringify(words));
+loadWords();
+}
