@@ -74,14 +74,14 @@ const saveButton = document.querySelector(".save-button");
 saveButton.addEventListener("click",()=>{
   event.preventDefault();
   let en = form.querySelector("#en");
-en = en.value;
 let id = form.querySelector("#id");
-id = id.value;
 // testArea.innerHTML = en + id;
-if(en != "" && id != ""){
-  saveNewWord(en,id);
+if(en.value != "" && id.value != ""){
+  saveNewWord(en.value,id.value);
   loadWords();
   form.classList.toggle("show");
+en.value = "";
+id.value = "";
 }
 })
 function saveNewWord(en, id){
